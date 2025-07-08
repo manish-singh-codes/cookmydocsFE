@@ -52,19 +52,19 @@ const Navbar = () => {
   const [login, setLogin] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/90 shadow backdrop-blur">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative">
-              <div className="flex p-6 h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-700 shadow-lg">
                 <span className="text-lg font-bold text-white">CMD</span>
               </div>
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-semibold text-foreground">
-                COOKMYDOCS
+              <span className="text-xl font-semibold text-green-600">
+                COOK<span className=" text-indigo-600">MY</span>DOCS
               </span>
               <p className="text-xs text-muted-foreground">
                 Resume Builder & Tools
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     href="/resume-builder"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:bg-green-50 hover:text-green-700 transition"
                   >
                     Resume Builder
                   </Link>
@@ -87,24 +87,26 @@ const Navbar = () => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="hover:text-green-700">
+                  Tools
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[500px] gap-3 p-4 md:grid-cols-2">
                     {tools.map((tool) => (
                       <NavigationMenuLink key={tool.title} asChild>
                         <Link
                           href={tool.href}
-                          className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                          className="group grid items-start rounded-md p-4 hover:bg-green-50 transition"
                         >
                           <div className="flex items-center gap-2">
-                            <tool.icon className="h-4 w-4" />
-                            <div className="text-sm font-medium leading-none group-hover:underline">
+                            <tool.icon className="h-5 w-5 text-green-600" />
+                            <span className="font-medium group-hover:underline">
                               {tool.title}
-                            </div>
+                            </span>
                           </div>
-                          <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          <p className="text-sm text-muted-foreground">
                             {tool.description}
-                          </div>
+                          </p>
                         </Link>
                       </NavigationMenuLink>
                     ))}
@@ -116,7 +118,7 @@ const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     href="/templates"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:bg-green-50 hover:text-green-700 transition"
                   >
                     Templates
                   </Link>
@@ -127,7 +129,7 @@ const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     href="/pricing"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:bg-green-50 hover:text-green-700 transition"
                   >
                     Pricing
                   </Link>
@@ -141,14 +143,19 @@ const Navbar = () => {
             {login === false ? (
               <>
                 <Button variant="ghost" asChild>
-                  <Link href="/login">Login</Link>
+                  <Link href="/login" className="hover:text-green-700">
+                    Login
+                  </Link>
                 </Button>
-                <Button asChild>
+                <Button
+                  asChild
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                >
                   <Link href="/signup">Get Started</Link>
                 </Button>
               </>
             ) : (
-              <Button asChild>
+              <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
                 <Link href="/dashboard">Dashboard</Link>
               </Button>
             )}
@@ -167,7 +174,7 @@ const Navbar = () => {
                 <SheetClose asChild>
                   <Link
                     href="/resume-builder"
-                    className="flex items-center space-x-2 text-lg font-medium hover:text-blue-600 transition-colors"
+                    className="flex items-center space-x-2 text-lg font-medium hover:text-green-700"
                   >
                     <FileText className="h-5 w-5" />
                     <span>Resume Builder</span>
@@ -182,14 +189,14 @@ const Navbar = () => {
                     <SheetClose key={tool.title} asChild>
                       <Link
                         href={tool.href}
-                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-green-50 transition"
                       >
-                        <tool.icon className="h-5 w-5 mt-0.5 text-blue-600" />
+                        <tool.icon className="h-5 w-5 text-green-600" />
                         <div>
                           <div className="font-medium">{tool.title}</div>
-                          <div className="text-sm text-muted-foreground">
+                          <p className="text-sm text-muted-foreground">
                             {tool.description}
-                          </div>
+                          </p>
                         </div>
                       </Link>
                     </SheetClose>
@@ -200,7 +207,7 @@ const Navbar = () => {
                   <SheetClose asChild>
                     <Link
                       href="/templates"
-                      className="flex items-center space-x-2 text-lg font-medium hover:text-blue-600 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-green-700"
                     >
                       <span>Templates</span>
                     </Link>
@@ -208,7 +215,7 @@ const Navbar = () => {
                   <SheetClose asChild>
                     <Link
                       href="/pricing"
-                      className="flex items-center space-x-2 text-lg font-medium hover:text-blue-600 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-green-700"
                     >
                       <span>Pricing</span>
                     </Link>
@@ -217,9 +224,14 @@ const Navbar = () => {
 
                 <div className="flex flex-col space-y-3 pt-6 border-t">
                   <Button variant="outline" asChild>
-                    <Link href="/login">Login</Link>
+                    <Link href="/login" className="hover:text-green-700">
+                      Login
+                    </Link>
                   </Button>
-                  <Button asChild>
+                  <Button
+                    asChild
+                    className="bg-green-600 hover:bg-green-700 text-white"
+                  >
                     <Link href="/signup">Get Started</Link>
                   </Button>
                 </div>
