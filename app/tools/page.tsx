@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 const page = () => {
@@ -10,5 +11,4 @@ const page = () => {
     </div>
   )
 }
-
 export default page
