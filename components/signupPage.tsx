@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Checkbox } from "./ui/checkbox"
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
@@ -64,9 +65,11 @@ export default function SignUp() {
             className="space-y-8"
           >
             <div className="space-y-4">
-             
-
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">
                   Welcome back to your
                   <span className="block bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent">
@@ -74,8 +77,8 @@ export default function SignUp() {
                   </span>
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Access powerful tools to create standout resumes, optimize for ATS systems, and manage your documents
-                  with ease.
+                  Access powerful tools to create standout resumes, optimize for
+                  ATS systems, and manage your documents with ease.
                 </p>
               </motion.div>
             </div>
@@ -93,8 +96,12 @@ export default function SignUp() {
                     <feature.icon className="w-5 h-5 text-indigo-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">{feature.title}</h3>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
+                    <h3 className="font-semibold text-gray-900">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {feature.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -110,8 +117,12 @@ export default function SignUp() {
           >
             <Card className="w-full max-w-md shadow-xl border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="space-y-1 pb-6">
-                <CardTitle className="text-2xl font-bold text-center">Register</CardTitle>
-                <CardDescription className="text-center">Get started with us</CardDescription>
+                <CardTitle className="text-2xl font-bold text-center">
+                  Register
+                </CardTitle>
+                <CardDescription className="text-center">
+                  Get started with us
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -133,7 +144,7 @@ export default function SignUp() {
                     <Input
                       id="email"
                       type="email"
-                      name ="email"
+                      name="email"
                       placeholder="Enter your email"
                       value={formData.email}
                       onChange={(e) => handleChange(e)}
@@ -145,7 +156,7 @@ export default function SignUp() {
                     <Label htmlFor="email">Phone Number</Label>
                     <Input
                       type="number"
-                      name ="phoneNumber"
+                      name="phoneNumber"
                       placeholder="Enter your email"
                       value={formData.phoneNumber}
                       onChange={(e) => handleChange(e)}
@@ -180,8 +191,24 @@ export default function SignUp() {
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? (
+                          <EyeOff className="w-4 h-4" />
+                        ) : (
+                          <Eye className="w-4 h-4" />
+                        )}
                       </button>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 justify-center ">
+                    <Checkbox id="terms-2" defaultChecked />
+                    <div className="grid gap-2">
+                      <Label htmlFor="terms-2">
+                        Accept terms and conditions
+                      </Label>
+                      <p className="text-muted-foreground text-sm">
+                        By clicking this checkbox, you agree to the terms and
+                        conditions.
+                      </p>
                     </div>
                   </div>
 
@@ -189,17 +216,19 @@ export default function SignUp() {
                     type="submit"
                     className="w-full h-11 bg-gradient-to-br from-indigo-400 to-indigo-900 transition-all duration-200"
                   >
-                    Sign In
+                    Sign Up
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </form>
 
-                <div className="relative">
+                {/* <div className="relative">
                   <div className="absolute inset-0 flex items-center">
                     <Separator />
                   </div>
                   <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-white px-2 text-gray-500">Or continue with</span>
+                    <span className="bg-white px-2 text-gray-500">
+                      Or continue with
+                    </span>
                   </div>
                 </div>
 
@@ -226,16 +255,23 @@ export default function SignUp() {
                     Google
                   </Button>
                   <Button variant="outline" className="h-11 bg-transparent">
-                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z" />
                     </svg>
                     LinkedIn
                   </Button>
-                </div>
+                </div> */}
 
                 <div className="text-center text-sm text-gray-600">
                   {"Don't have an account? "}
-                  <Link href="/signup" className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors">
+                  <Link
+                    href="/signup"
+                    className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+                  >
                     Create one now
                   </Link>
                 </div>
@@ -245,5 +281,5 @@ export default function SignUp() {
         </div>
       </div>
     </div>
-  )
+  );
 }
