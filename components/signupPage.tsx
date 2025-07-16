@@ -205,10 +205,6 @@ export default function SignUp() {
                       <Label htmlFor="terms-2">
                         Accept terms and conditions
                       </Label>
-                      <p className="text-muted-foreground text-sm">
-                        By clicking this checkbox, you agree to the terms and
-                        conditions.
-                      </p>
                     </div>
                   </div>
 
