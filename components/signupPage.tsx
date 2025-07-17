@@ -205,7 +205,9 @@ export default function SignUp() {
                       <Label htmlFor="terms-2">
                         Accept terms and conditions
                       </Label>
+
                     </div>
+                    
                   </div>
 
                   <Button
