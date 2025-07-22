@@ -58,11 +58,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-700 shadow-lg">
+              <div className="flex h-10 w-10 px-6 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-700 shadow-lg">
                 <span className="text-lg font-bold text-white">CMD</span>
               </div>
             </div>
-            <div className="hidden sm:block">
+            <div className="">
               <span className="text-xl font-semibold text-green-600">
                 COOK<span className=" text-indigo-600">MY</span>DOCS
               </span>
