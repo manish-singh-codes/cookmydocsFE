@@ -54,7 +54,7 @@ export default function SignUp() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 to-indigo-200">
       <div className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-7rem)]">
           {/* Left Column - Branding & Features */}

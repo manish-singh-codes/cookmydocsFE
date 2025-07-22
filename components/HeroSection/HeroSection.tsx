@@ -5,11 +5,26 @@ import { roboto } from './../../utils/font'
 import {motion} from 'motion/react'
 
 const HeroSection = () => {
+
   return (
     <div className=''>
       <div className=' max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex md:flex-row flex-col mt-20 items-center gap-[10%] relative '>
-        <div className=' absolute bottom-0 right-0 w-[20%] blur-[100px] h-[30%] bg-green-500 -z-10'></div>
-        <div className=' absolute top-20 right-0 w-[10%] blur-[100px] h-[30%] bg-indigo-500 -z-10'></div>
+        <motion.div className=' absolute bottom-10 right-10 w-[10%] blur-3xl h-[20%] bg-green-500 -z-10'   animate={{
+        scale: [1.5,2,1.5],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }} ></motion.div>
+        <motion.div className=' absolute top-20 right-0 w-[10%] blur-3xl h-[30%] bg-indigo-500 -z-10'  animate={{
+        scale: [1.5,2,1.5],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}></motion.div>
         <motion.div
              initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -18,7 +33,7 @@ const HeroSection = () => {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }} 
               >
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl  font-bold text-gray-600 ${roboto.className} `}>Powerful <span className=' text-indigo-600 '>Resume</span> Builder with Smart <span className='text-indigo-600'>Tools</span> to Match.</h1>
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl  font-bold text-gray-600 ${roboto.className} `}>Powerful <span className=' text-indigo-600 '>Resume</span> <span className=' text-green-600 '>Builder</span> with Smart <span className='text-indigo-600'>Tools</span> to Match.</h1>
             <p className='mt-4 text-lg text-gray-600'>
                 Cook your documents with ease using our intuitive tools designed for efficiency and style.
             </p>
