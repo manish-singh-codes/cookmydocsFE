@@ -77,7 +77,7 @@ const Templates = () => {
 
   return (
     <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 py-8">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-gray-600 mb-6 text-center sm:text-left">
+      <h2 className="text-2xl sm:text-4xl font-medium text-gray-800 mb-6 text-center sm:text-left">
         Build your resume with our trending templates
       </h2>
 
