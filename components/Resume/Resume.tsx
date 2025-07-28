@@ -28,11 +28,11 @@ const Resume = () => {
     "Product Manager": "/template3.avif",
     "Software Engineer": "/template4.png",
     "Sales": "/template5.jpeg",
-    "Teacher": "/placeholder.svg?height=800&width=600&text=Teacher+Resume",
-    "Engineer": "/placeholder.svg?height=800&width=600&text=Engineer+Resume",
-    "Accounting": "/placeholder.svg?height=800&width=600&text=Accounting+Resume",
-    "Designer": "/placeholder.svg?height=800&width=600&text=Designer+Resume",
-    "Marketing": "/placeholder.svg?height=800&width=600&text=Marketing+Resume",
+    "Teacher": "/template1.webp",
+    "Engineer": "/template2.png",
+    "Accounting": "/template3.avif",
+    "Designer": "/template4.png",
+    "Marketing": "/template5.jpeg",
   }
 
   return (
