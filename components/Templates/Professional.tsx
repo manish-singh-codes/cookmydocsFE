@@ -783,16 +783,13 @@ export function ProfessionalTemplates() {
     { id: 10, name: "Formal Border", component: ProfessionalTemplate10 },
   ]
 
-  return (
-    <div className="space-y-8">
-      {templates.map((template) => (
-        <div key={template.id} className="space-y-4">
-          <h3 className="text-lg font-semibold text-center">
-            Professional Template {template.id}: {template.name}
-          </h3>
-          <template.component />
-        </div>
-      ))}
+  // Return an array of elements, each as a grid item
+  return templates.map((template) => (
+    <div key={template.id} className="space-y-2 h-full w-full max-w-4xl mx-auto text-xs">
+      <h3 className="text-base text-center">
+        {template.name}
+      </h3>
+      <template.component />
     </div>
-  )
+  ))
 }
